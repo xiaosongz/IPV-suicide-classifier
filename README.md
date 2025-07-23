@@ -107,6 +107,13 @@ install.packages(c(
 
 Place your NVDRS RAD file in the `data/` directory. The file must contain [required variables](#required-nvdrs-variables).
 
+**Note**: NVDRS data requires special access permissions. If you don't have NVDRS data yet, you can test the classifier with synthetic example data by running:
+```r
+source("examples/run_example.R")
+```
+
+For detailed data format requirements, see `docs/NVDRS_Data_Format.md`.
+
 ## Usage
 
 ### Option 1: Automated Full Pipeline

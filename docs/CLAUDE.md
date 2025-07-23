@@ -61,8 +61,11 @@ library(purrr)    # For functional programming
 # Set working directory to repository root
 setwd("/path/to/IPV-suicide")
 
-# Run the complete workflow
+# Run the complete workflow (requires NVDRS data)
 source("R/main.R")
+
+# Or test with example data (no NVDRS data required)
+source("examples/run_example.R")
 ```
 
 ### Step-by-Step Execution
@@ -140,6 +143,8 @@ The classifier requires specific NVDRS variables with exact naming (_c suffix fo
 - Missing concept scores (when keywords aren't found) are automatically set to 0
 - The classifier uses a 0.5 probability threshold by default
 - Process time: ~5-10 minutes for 30,000 cases
+- NVDRS data requires special access; example data is provided for testing
+- The concept_020122.Rdata file contains term lists with relative frequencies, not the notes to process
 
 ## Concept Categories
 

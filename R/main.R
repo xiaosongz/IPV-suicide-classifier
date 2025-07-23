@@ -24,9 +24,15 @@ source("R/06_apply_classifier.R")         # Model application
 
 # File paths - UPDATE THESE FOR YOUR SYSTEM
 config <- list(
-  nvdrs_file = "data/RAD_2019_demo_010622.Rdata",  # Your NVDRS RAD file
-  concept_file = "models/concept_020122.Rdata",       # Concept term lists
-  model_file = "models/IPV_Related_Suicide_rfmodel_2022_01_28.Rdata",  # IPV classifier model
+  # IMPORTANT: You need to provide your own NVDRS RAD file
+  # Place it in the data/ directory and update the filename below
+  nvdrs_file = "data/your_nvdrs_rad_file.Rdata",  # <-- UPDATE THIS with your NVDRS RAD filename
+  
+  # These files are included in the repository
+  concept_file = "models/concept_020122.Rdata",       # Concept term lists (included)
+  model_file = "models/IPV_Related_Suicide_rfmodel_2022_01_28.Rdata",  # IPV classifier model (included)
+  
+  # Output configuration
   output_dir = "output",                       # Directory for results
   output_predictions = "output/ipv_predictions.csv",
   output_report = "output/ipv_classifier_report.txt"
@@ -52,6 +58,21 @@ run_ipv_classifier <- function(config) {
   
   # Step 1: Load all data
   cat("\n[Step 1/7] Loading data...\n")
+  
+  # Check if NVDRS file exists
+  if(!file.exists(config$nvdrs_file)) {
+    cat("\n!!! NVDRS DATA FILE NOT FOUND !!!\n")
+    cat("Expected file:", config$nvdrs_file, "\n\n")
+    cat("To use this classifier, you need:\n")
+    cat("1. NVDRS RAD data file in .Rdata format\n")
+    cat("2. Place it in the data/ directory\n")
+    cat("3. Update the filename in this script (line 29)\n\n")
+    cat("For data format requirements, see: docs/NVDRS_Data_Format.md\n\n")
+    cat("To test with example data, run:\n")
+    cat("  source(\"examples/run_example.R\")\n\n")
+    stop("NVDRS data file not found. See messages above for help.")
+  }
+  
   data_list <- load_all_data(
     nvdrs_file = config$nvdrs_file,
     concept_file = config$concept_file,
@@ -142,8 +163,10 @@ results <- tryCatch({
   cat("Error message:", e$message, "\n")
   cat("\nPlease check:\n")
   cat("1. All required files exist in the specified locations\n")
-  cat("2. NVDRS data is properly formatted\n")
-  cat("3. All required R packages are installed\n")
+  cat("2. NVDRS data is properly formatted (see docs/NVDRS_Data_Format.md)\n")
+  cat("3. All required R packages are installed (run source(\"R/00_setup.R\"))\n")
+  cat("\nTo test with example data:\n")
+  cat("  source(\"examples/run_example.R\")\n")
   return(NULL)
 })
 
