@@ -1,0 +1,80 @@
+# R specific files
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+.Rproj.user/
+*.Rproj
+
+# Output and data directories
+data/*
+!data/.gitkeep
+output/*
+!output/.gitkeep
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+*~
+
+# Log files
+*.log
+
+# Package documentation
+man/*.Rd
+
+# RStudio files
+.Rproj.user
+
+# OAuth2 token
+.httr-oauth
+
+# knitr and R markdown default cache directories
+*_cache/
+/cache/
+
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+
+# Large data files (add specific patterns as needed)
+*.csv
+*.xlsx
+*.xls
+
+# Exclude large NVDRS files but keep model files
+*.Rdata
+!models/*.Rdata
+
+# Python files (if any)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE specific files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
