@@ -2,6 +2,12 @@
 
 A machine learning tool to detect intimate partner violence (IPV) circumstances in suicide data from the National Violent Death Reporting System (NVDRS).
 
+## Acknowledgments
+
+This repository is based on the original work by Julie M. Kafka, available at https://github.com/jkafka/IPV-suicide. The enhanced version presented here reorganizes the code structure, adds modular R scripts, improves documentation, and provides a streamlined workflow while maintaining the core methodology and model developed by Kafka.
+
+## Original Work Citation
+
 This classifier was developed as part of Julie M Kafka's 2022 dissertation and is documented in a peer-reviewed publication:
 
 **Citation**: Kafka JM, et al. "Development and validation of a machine learning classifier to identify intimate partner violence-related suicide in the National Violent Death Reporting System." *Injury Prevention* 2023. http://doi.org/10.1136/ip-2022-044662
@@ -349,8 +355,21 @@ For questions or issues:
 
 ## License
 
-This project is licensed under [specify license]. Please cite the published paper if you use this classifier in your research.
+This enhanced version maintains the same license as the original work. Please refer to the original repository (https://github.com/jkafka/IPV-suicide) for license details. When using this classifier in your research, please cite the published paper.
 
-## Acknowledgments
+## Credits and Acknowledgments
 
-This work was supported by [funding sources]. The classifier was developed using data from the National Violent Death Reporting System (NVDRS), which is maintained by the Centers for Disease Control and Prevention (CDC).
+### Original Development
+This classifier was originally developed by Julie M. Kafka as part of her 2022 dissertation. The original repository is available at https://github.com/jkafka/IPV-suicide.
+
+### This Enhanced Version
+This repository provides an enhanced implementation with:
+- Reorganized code structure following R best practices
+- Modular R scripts for easier understanding and maintenance
+- Improved documentation and usage instructions
+- Streamlined workflow automation
+
+The core methodology, model, and scientific approach remain unchanged from Kafka's original work.
+
+### Data Source
+The classifier was developed using data from the National Violent Death Reporting System (NVDRS), which is maintained by the Centers for Disease Control and Prevention (CDC).
