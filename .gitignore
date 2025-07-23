@@ -78,3 +78,6 @@ __pycache__/
 .Spotlight-V100
 .Trashes
 ehthumbs.db
+
+# PDF files
+*.pdf
